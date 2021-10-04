@@ -1,0 +1,13 @@
+﻿<Window x:Class="PracticeProject.MovieInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticeProject"
+        mc:Ignorable="d"
+        Title="Movie Information" Height="450" Width="450.088">
+    <Grid Margin="0,0,-6.6,0">
+        <Button Content="Get List" HorizontalAlignment="Left" Height="33" Margin="158,377,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.332,0.442"/>
+
+    </Grid>
+</Window>
