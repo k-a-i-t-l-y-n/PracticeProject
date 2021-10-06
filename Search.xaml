@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
         Title="Search" Height="450" Width="650">
-    <Grid>
-        <Button Content="Get List" HorizontalAlignment="Left" Margin="256,391,0,0" Width="75" Height="19" VerticalAlignment="Top" Click="Button_Click_1"/>
+    <Grid Height="420" Margin="0,0,0.2,0" VerticalAlignment="Top">
+        <Button Content="Get List" HorizontalAlignment="Left" Margin="256,391,0,0" Width="75" Click="Button_Click_1" Height="19" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
