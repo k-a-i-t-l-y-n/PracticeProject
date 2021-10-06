@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Search" Height="450" Width="650">
     <Grid>
-        <Button Content="Get List" HorizontalAlignment="Left" Margin="256,391,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Get List" HorizontalAlignment="Left" Margin="256,391,0,0" Width="75" Height="19" VerticalAlignment="Top" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
