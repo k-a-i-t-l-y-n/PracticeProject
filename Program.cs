@@ -10,8 +10,7 @@ namespace PracticeProject
     class UserInput
     {
         public
-        string title
-        { get; set; }
+        string title{ get; set; }
         string director { get; set; }
         string actor { get; set; }
         int genre { get; set; }
@@ -21,8 +20,7 @@ namespace PracticeProject
     class Movie
     {
         public
-        int movieID
-        { get; set; }
+        int movieID{ get; set; }
         string title { get; set; }
         string director { get; set; }
         string actor { get; set; }
