@@ -9,24 +9,24 @@ namespace PracticeProject
 
     class UserInput
     {
-        public
-        string title{ get; set; }
-        string director { get; set; }
-        string actor { get; set; }
-        int genre { get; set; }
-        string year { get; set; }
+        
+      public  string title{ get; set; }
+      public  string director { get; set; }
+      public  string actor { get; set; }
+      public  int genre { get; set; }
+      public  string year { get; set; }
     }
 
     class Movie
     {
-        public
-        int movieID{ get; set; }
-        string title { get; set; }
-        string director { get; set; }
-        string actor { get; set; }
-        int genre { get; set; }
-        string year { get; set; }
-        string description { get; set; }
+ 
+     public  int movieID{ get; set; }
+     public  string title { get; set; }
+     public  string director { get; set; }
+     public  string actor { get; set; }
+     public  int genre { get; set; }
+     public  string year { get; set; }
+      public  string description { get; set; }
     }
     class ErrorHandling
     {
@@ -68,7 +68,9 @@ namespace PracticeProject
             return movieList.Find(delegate (Movie movie)
             {
                 return movie.movieID.Equals(movieId);
+             
             });
+           
         }
         }
         class AI { }
