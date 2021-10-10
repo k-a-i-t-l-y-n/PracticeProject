@@ -10,29 +10,29 @@ namespace PracticeProject
     class UserInput
     {
         
-      public  string title{ get; set; }
-      public  string director { get; set; }
-      public  string actor { get; set; }
-      public  int genre { get; set; }
-      public  string year { get; set; }
+      public  string Title{ get; set; }
+      public  string Director { get; set; }
+      public  string Actor { get; set; }
+      public  int Genre { get; set; }
+      public  string Year { get; set; }
     }
 
     class Movie
     {
  
-     public  int movieID{ get; set; }
-     public  string title { get; set; }
-     public  string director { get; set; }
-     public  string actor { get; set; }
-     public  int genre { get; set; }
-     public  string year { get; set; }
-      public  string description { get; set; }
+     public  int MovieID{ get; set; }
+     public  string Title { get; set; }
+     public  string Director { get; set; }
+     public  string Actor { get; set; }
+     public  int Genre { get; set; }
+     public  string Year { get; set; }
+      public  string Description { get; set; }
     }
     class ErrorHandling
     {
         private
             bool inputValid;
-        bool listEmpty;
+            bool listEmpty;
         public
             bool noInput(UserInput input)
         {
@@ -67,8 +67,7 @@ namespace PracticeProject
         {
             return movieList.Find(delegate (Movie movie)
             {
-                return movie.movieID.Equals(movieId);
-             
+                return movie.MovieID.Equals(movieId);
             });
            
         }
