@@ -52,8 +52,8 @@ namespace PracticeProject
        
     
          public bool emptyList(List<Movie> movieList)
-                { 
-                return
+                {
+            return (movieList.Count == 0);
                 }
          public bool invalidInput(UserInput input) 
                 { 
@@ -89,92 +89,105 @@ namespace PracticeProject
         class AI { }
     class Query 
     {
-        string connectString;
+        string connectionString;
         string movieTable = "Movie";
         string genreTable = "Genre";
         string directorTable = "Director";
         string actorTable = "Actor";
         string userTable = "User";
-        public string FormQuery(UserInput input, int movieID)
+        bool hasResults = false;
+        public List<int> SearchQuery(UserInput input)
         {
-            string SelectPt1 = "SELECT movieId FROM";
-            string SelectPt2 = "WHERE ";
-            string SelectPt3 = "= (";
+            string selectPt1 = "SELECT movieID FROM ";
+            string selectPt2 = "WHERE ";
+            string tempQueryString;
+            List<int> results = new List<int>();
+            SqlCommand command;
+            SqlDataReader reader;
+            //If there is input for title search database for titles that have the input as a substring.
             if (input.Title != "")
             {
-                SelectPt2 = SelectPt2 + "title, ";
-                SelectPt3 = SelectPt3 + input.Title + ", ";
-            }
-            if (input.Director != "")
-            {
-                SelectPt2 = SelectPt2 + "director, ";
-                SelectPt3 = SelectPt3 + input.Director + ", ";
-            }
-            if (input.Actor != "")
-            {
-                SelectPt2 = SelectPt2 + "actor, ";
-                SelectPt3 = SelectPt3 + input.Actor + ", ";
-            }
-            if (input.Genre != 0)
-            {
-                SelectPt2 = SelectPt2 + "genre, ";
-                SelectPt3 = SelectPt3 + input.Genre + ", ";
-            }
-            if (input.Year != "")
-            {
-                SelectPt2 = SelectPt2 + "year, ";
-                SelectPt3 = SelectPt3 + input.Year;
-            }
-            SelectPt3 = SelectPt3 + ")";
-            return SelectPt1 + SelectPt2 + SelectPt3;
-        }
-            public List<int> SearchQuery(UserInput input)
-            {
-                string SelectPt1 = "SELECT movieID FROM ";
-                string SelectPt2 = "WHERE ";
-                string SelectPt3 = "= (";
-                SqlCommand command;
-                SqlDataReader reader;
-            //If there is input for title search database for titles that have the input as a substring.
-                if (input.Title != "")
+                tempQueryString = selectPt1 + movieTable + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";
+                command = new SqlCommand(tempQueryString, connection);
+                using (reader = command.ExecuteReader())
                 {
-                SelectPt1 += movieTable;
-                    SelectPt2 = SelectPt2  +"title LIKE '%"+input.Title+"%'";
-                command= new SqlCommand(SelectPt1+SelectPt2, connection)
+                    while (reader.Read())
+                    {
+                        results.Add(reader.GetInt32(0));
+                    }
                 }
-                if (input.Director != "")
+                hasResults = true;
+            }
+            if (input.Director != "" && results[0]!=-1)
+            {
+                tempQueryString = selectPt1 + directorTable + " " + selectPt2 + " directorName = " + input.Director;
+                if (hasResults == true)
+                    tempQueryString = FormMovieIDQuery(results, tempQueryString);
+                command = new SqlCommand(tempQueryString, connection);
+                using (reader = command.ExecuteReader())
                 {
-                    SelectPt2 = SelectPt2 + directorTable +", ";
-                    SelectPt3 = SelectPt3 + input.Director + ", ";
+                    while (reader.Read())
+                    {
+                        results.Add(reader.GetInt32(0));
+                    }
+
                 }
-                if (input.Actor != "")
+            }
+                if (input.Actor != "" && results[0] != -1)
                 {
-                    SelectPt2 +=  actorTable +", ";
-                    SelectPt3 += input.Actor + ", ";
+                    tempQueryString = selectPt1 + actorTable + " actor "+ selectPt2 + input.Actor;
+                    command = new SqlCommand(tempQueryString, connection);
+                    using (reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            results.Add(reader.GetInt32(0));
+                        }
+                    }
                 }
-                if (input.Genre != 0)
+                if (input.Genre != 0 && results[0] != -1)
                 {
-                    SelectPt2 += genreTable +", ";
-                    SelectPt3 +=  input.Genre + ", ";
+                    tempQueryString = selectPt1 + genreTable + " " +selectPt2 + input.Genre;
+                if (hasResults == true)
+                   tempQueryString= FormMovieIDQuery(results, tempQueryString);
+                command = new SqlCommand(tempQueryString, connection);
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        results.Add(reader.GetInt32(0));
+                    }
                 }
+                hasResults = true;
+                }
+
                 if (input.Year != "")
                 {
-                    SelectPt2 = SelectPt2 + "year, ";
-                    SelectPt3 = SelectPt3 + input.Year;
+                    tempQueryString = selectPt1 + movieTable + " year " + selectPt2 + input.Year;
+                if (hasResults == true)
+                    tempQueryString = FormMovieIDQuery(results, tempQueryString);
+                command = new SqlCommand(tempQueryString, connection);
+                    using (reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            results.Add(reader.GetInt32(0));
+                        }
+                    }
+                hasResults = true;
                 }
-
-
-            }
-            String FormMovieIDQuery(List<int> movieIds ) 
+            return results;
+        }
+            String FormMovieIDQuery(List<int> movieIds, string query ) 
             {
-            string idQuery = "WHERE movieId IN (";
+            query += "WHERE movieId IN (";
             foreach (int id in movieIds)
               {
-                idQuery += "'" + id + "', ";
+                query += "'" + id + "', ";
               }
-            idQuery += ")";
-            return idQuery;
+            query += ")";
+            return query;
             
             }
         }
-    }
+        }
