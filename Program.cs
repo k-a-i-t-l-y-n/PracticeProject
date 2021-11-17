@@ -86,7 +86,7 @@ namespace PracticeProject
             });  
         }
         }
-        class AI { }
+
     class Query 
     {
         string connectionString;
