@@ -34,6 +34,7 @@ namespace PracticeProject
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             String Title = Console.ReadLine();
+            
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)

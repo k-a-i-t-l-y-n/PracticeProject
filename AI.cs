@@ -12,7 +12,7 @@ namespace PracticeProject
 {
     class AI
     {
-        public static void runAI()
+        public static List<moviesForList> runAI()
         {
             MLContext mlContext = new MLContext();
 
@@ -20,7 +20,9 @@ namespace PracticeProject
 
             ITransformer trainedModel = buildAndTrainModel(mlContext, trainingData);
 
+            var list = createRecomendationList(mlContext, trainedModel);
 
+            return orderList(list);
         }
 
         //Function to load the data from the csv file and split it into training and testing data
@@ -67,7 +69,7 @@ namespace PracticeProject
         }
 
         //fuction to create the lst of recommended movies 
-        public static void createRecomendationList(MLContext mLContext, ITransformer trainedModel)
+        public static List<moviesForList> createRecomendationList(MLContext mLContext, ITransformer trainedModel)
         {
             //create the prediction engine to make the predictions
             var predictionEngine = mLContext.Model.CreatePredictionEngine<movieRatings, RatingPrediction>(trainedModel);
@@ -96,7 +98,7 @@ namespace PracticeProject
             }
 
             //send the list to be put into descending order
-            orderList(movieList);
+            return movieList;
 
         }
 
