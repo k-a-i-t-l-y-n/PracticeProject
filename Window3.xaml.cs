@@ -17,27 +17,38 @@ namespace PracticeProject
     /// <summary>
     /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class Window3 : Window
+    public partial class Win3 : Window
     {
-       
-
-        public Window3()
+     
+        public Win3()
         {
             InitializeComponent();
+
         }
 
-        public int Index { get; private set; }
+      public int Index { get; private set; }
+      public object PrintText_TextChanged_1 { get; private set; }
+      public object TextBox1 { get; private set; }
+      public Action<object, TextChangedEventArgs> SetValueForText1 { get; private set; }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //previous button
         {
-            var win3 = new Window2();
+            var win3 = new Win2();
             win3.Show();
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e) //exit button
         {
             this.Close();
         }
+
+     
+
+      
+
+
     }
 }
+
+
