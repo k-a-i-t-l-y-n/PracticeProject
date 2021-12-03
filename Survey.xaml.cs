@@ -30,7 +30,7 @@ namespace PracticeProject
             ranking = 0;
         }
 
-        //Sets the name for the movie
+        //Sets the title for the movie
         public void Name(string name)
         {
             this.name = name;
@@ -40,8 +40,19 @@ namespace PracticeProject
         public void Ranking(int rank)
         {
             this.ranking = rank;
-        }      
-        
+        }
+
+        //Gets the title of the movie
+        public string getTitle()
+        {
+            return this.name;
+        }
+
+        //Gets the rank of the movie
+        public int getRank()
+        {
+            return this.ranking;
+        }
     }
 
     public partial class Survey : Window
