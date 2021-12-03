@@ -28,10 +28,10 @@ namespace PracticeProject
 
         public int Index { get; private set; }
         public object Value { get; }
-       public Action<object, TextChangedEventArgs> SetValueForText1 { get; private set; }
+        public Action<object, TextChangedEventArgs> SetValueForText1 { get; private set; }
 
 
-        public Win2()
+        public Win2() //class 
         {
             InitializeComponent();
             LoadCombo();
@@ -59,11 +59,11 @@ namespace PracticeProject
 
         }
 
-        private void LoadCombo()
+        private void LoadCombo() //Array that stores Genre list
 
         {
             Combo.ItemsSource = new List<string> { 
-                                                       "Action", "Drama","Horror", "Christmas", "Thriller","Comedy","Science Fiction","Romance"," Western","Adventure", "Fiction",
+                                                       "Action","Adventure", "Drama","Horror", "Christmas", "Thriller","Comedy","Science Fiction","Romance"," Western","Adventure", "Fiction",
                                                        "Muscical","Crime film","Fantasy","War","Television","Epic","Historical Fiction", "Gangster","Documentary","Noir","Children's Film",
                                                        "Sports","Maritial Arts"
                                                      };
@@ -106,7 +106,7 @@ namespace PracticeProject
 
 
 
-        private void Try_Again_Click(object sender, RoutedEventArgs e)
+        private void Try_Again_Click(object sender, RoutedEventArgs e) //Allows user to start over
         {
 
             Author.Clear();
@@ -117,7 +117,7 @@ namespace PracticeProject
 
 
 
-        private void Get_List_Click(object sender, RoutedEventArgs e)
+        private void Get_List_Click(object sender, RoutedEventArgs e) //Button to create list
         {
             string author = Author.Text.Trim();
             string year = Year.Text.Trim();
