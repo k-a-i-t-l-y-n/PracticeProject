@@ -118,23 +118,7 @@ namespace PracticeProject
                     {
                         this.PosterLink = reader.GetString(0);
                     }
-
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
         }
     }
