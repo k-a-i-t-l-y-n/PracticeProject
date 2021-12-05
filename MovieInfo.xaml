@@ -6,8 +6,21 @@
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
         Title="Movie Information" Height="450" Width="450.088">
-    <Grid Margin="0,0,-6.6,0">
-        <Button Content="Get List" HorizontalAlignment="Left" Height="33" Margin="158,377,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.332,0.442"/>
+    <Grid Margin="0,0,-7,0" Height="417" VerticalAlignment="Top">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="357" Stroke="Black" VerticalAlignment="Top" Width="376" Margin="23,10,0,0"/>
+        <TextBlock x:Name="MovieDescription" HorizontalAlignment="Left" Margin="203,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="172" Width="196"><Run Text="Description"/></TextBlock>
+        <Label Content="Director" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,163,0,0"/>
+        <Label Content="Actors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,212,0,0"/>
+        <Label Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,276,0,0"/>
+        <Label Content="Release Year" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,314,0,0"/>
+        <TextBox x:Name="MovieTitle" HorizontalAlignment="Left" Height="110" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="350" Margin="36,27,0,0"/>
+        <TextBox x:Name="MovieDirector" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="49,189,0,0"/>
+        <TextBox x:Name="MovieActor" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="49,238,0,0" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="MovieGenre" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="96,280,0,0"/>
+        <TextBox x:Name="MovieYear" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49" Margin="129,318,0,0"/>
+        <Button x:Name="CloseMovieInfo" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="22" Margin="421,8,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+
+        </Button>
 
     </Grid>
 </Window>

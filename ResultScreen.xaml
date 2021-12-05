@@ -1,25 +1,45 @@
-﻿<Window x:Class="PracticeProject.Win3"
+﻿<Window x:Class="PracticeProject.ResultScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
-        Title="Window3" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FF0DEDA0" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Button Content="Previous" HorizontalAlignment="Left" Margin="9,15,0,0" VerticalAlignment="Top" Width="75" Height="46" Click="Button_Click" FontFamily="Monotype Corsiva" FontSize="16" Grid.ColumnSpan="2"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="690,271,0,0" VerticalAlignment="Top" Width="75" Height="33" FontFamily="Monotype Corsiva" FontSize="16" Click="Button_Click_1" Grid.ColumnSpan="2" RenderTransformOrigin="0.456,-1.679"/>
-        <Label Content="Results" HorizontalAlignment="Left" Margin="321,60,0,0" VerticalAlignment="Top" Width="143" FontFamily="Monotype Corsiva" FontSize="36" Grid.ColumnSpan="2"/>
+        Title="ResultScreen" Height="600.8" Width="800">
 
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="MovieBorderStyle" TargetType="{x:Type Border}">
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="Height" Value="100"/>
+                <Setter Property="Width" Value="100"/>
+            </Style>
+            <Style x:Key="MovieTextBoxStyle" TargetType="{x:Type TextBox}"/>
+        </Grid.Resources>
+
+        <ScrollViewer CanContentScroll="True" x:Name="MovieScrollViewer" HorizontalAlignment="Left" Height="531" Margin="10,29,0,0" VerticalAlignment="Top" Width="774">
+
+            <Canvas Height="531" Width="774" Background="Gray">
+                <TextBox x:Name="TextBlock1" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock1_TextChanged"/>
+                <TextBox x:Name="TextBlock2" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock2_TextChanged" />
+                <TextBox x:Name="TextBlock3" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock3_TextChanged"/>
+                <TextBox x:Name="TextBlock4" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock4_TextChanged"/>
+                <TextBox x:Name="TextBlock5" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock5_TextChanged" />
+                <TextBox x:Name="TextBlock6" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock6_TextChanged"/>
+                <TextBox x:Name="TextBlock7" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock7_TextChanged"/>
+                <TextBox x:Name="TextBlock8" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock8_TextChanged"/>
+                <TextBox x:Name="TextBlock9" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock9_TextChanged"/>
+                <TextBox x:Name="TextBlock10" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock10_TextChanged"/>
+                <TextBox x:Name="TextBlock11" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock11_TextChanged"/>
+                <TextBox x:Name="TextBlock12" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock12_TextChanged"/>
+                <TextBox x:Name="TextBlock13" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock13_TextChanged"/>
+                <TextBox x:Name="TextBlock14" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock14_TextChanged"/>
+                <TextBox x:Name="TextBlock15" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock15_TextChanged"/>
+                <Button x:Name="LoadNewMoviesButton" Content="Load More Movies" Canvas.Left="570" Canvas.Top="431" Width="110" Click="LoadNewMoviesButton_Click"/>
+                <Button x:Name="LoadPreviousMoviesButton" Content="Load Previous Movies" Canvas.Left="79" Canvas.Top="436" Width="120" Click="LoadPreviousMoviesButton_Click"/>
+
+            </Canvas>
+        </ScrollViewer>
     </Grid>
 </Window>

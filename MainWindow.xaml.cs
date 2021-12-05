@@ -20,9 +20,16 @@ namespace PracticeProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        LoadScreen main = new LoadScreen();
+
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
+            this.Close();
+            main.Show();
+
         }
     }
 }

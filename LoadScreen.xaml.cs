@@ -17,9 +17,9 @@ namespace PracticeProject
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class LoadScreen : Window
     {
-        public Window1()
+        public LoadScreen()
         {
             InitializeComponent();
         }
@@ -31,8 +31,8 @@ namespace PracticeProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)//next button
         {    
-           var win2 = new Win2();
-           win2.Show();
+           SearchScreen search = new SearchScreen();
+           search.Show();
            this.Close();
 
        
