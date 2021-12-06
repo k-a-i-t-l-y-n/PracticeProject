@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+//using System.Windows.Shapes;
 
 namespace PracticeProject
 {
@@ -21,13 +22,14 @@ namespace PracticeProject
     //class to store the name and ranking for each movie in the survey
     public class SurveyMovies {
         public string name;
-        public int ranking;
+        public string ranking;
+        public string userId = "672";
         
         //Constructor that initializes the member fields
         public SurveyMovies()
         {
             name = "";
-            ranking = 0;
+            ranking = "";
         }
 
         //Sets the title for the movie
@@ -37,10 +39,11 @@ namespace PracticeProject
         }
 
         //Sets the ranking for the movie
-        public void Ranking(int rank)
+        public void Ranking(string rank)
         {
             this.ranking = rank;
         }
+
 
         //Gets the title of the movie
         public string getTitle()
@@ -49,7 +52,7 @@ namespace PracticeProject
         }
 
         //Gets the rank of the movie
-        public int getRank()
+        public string getRank()
         {
             return this.ranking;
         }
@@ -59,10 +62,13 @@ namespace PracticeProject
     {
         //List object to store the SurveyMovies objects
         List<SurveyMovies> surveyResults = new List<SurveyMovies>();
+        List<string> movies = new List<string> { "Movie1", "Movie2" , "Movie3" , "Movie4" , "Movie5" , "Movie6", "Movie7" , 
+            "Movie8" , "Movie9" , "Movie10" , "Movie11" , "Movie12" , "Movie13" , "Movie14" , "Movie15" };
 
         public Survey()
         {
             InitializeComponent();
+            setMovieTextBoxes(movies);
         }
 
         //Executed when the checkbox is checked and the boolean value is true
@@ -75,91 +81,91 @@ namespace PracticeProject
             if (cb.Name == "MovieCheckBox1")
             {
                 survey.Name(MovieTextBox1.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox2")
             {
                 survey.Name(MovieTextBox2.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox3")
             {
                 survey.Name(MovieTextBox3.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox4")
             {
                 survey.Name(MovieTextBox4.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox5")
             {
                 survey.Name(MovieTextBox5.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox6")
             {
                 survey.Name(MovieTextBox6.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox7")
             {
                 survey.Name(MovieTextBox7.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox8")
             {
                 survey.Name(MovieTextBox8.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox9")
             {
                 survey.Name(MovieTextBox9.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox10")
             {
                 survey.Name(MovieTextBox10.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox11")
             {
                 survey.Name(MovieTextBox11.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox12")
             {
                 survey.Name(MovieTextBox12.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox13")
             {
                 survey.Name(MovieTextBox13.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox14")
             {
                 survey.Name(MovieTextBox14.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
             else
             {
                 survey.Name(MovieTextBox15.Text);
-                survey.Ranking(5);
+                survey.Ranking("5");
                 surveyResults.Add(survey);
             }
 
@@ -175,91 +181,91 @@ namespace PracticeProject
             if (cb.Name == "MovieCheckBox1")
             {
                 survey.Name(MovieTextBox1.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox2")
             {
                 survey.Name(MovieTextBox2.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox3")
             {
                 survey.Name(MovieTextBox3.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox4")
             {
                 survey.Name(MovieTextBox4.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox5")
             {
                 survey.Name(MovieTextBox5.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox6")
             {
                 survey.Name(MovieTextBox6.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox7")
             {
                 survey.Name(MovieTextBox7.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox8")
             {
                 survey.Name(MovieTextBox8.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox9")
             {
                 survey.Name(MovieTextBox9.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox10")
             {
                 survey.Name(MovieTextBox10.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox11")
             {
                 survey.Name(MovieTextBox11.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox12")
             {
                 survey.Name(MovieTextBox12.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox13")
             {
                 survey.Name(MovieTextBox13.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox14")
             {
                 survey.Name(MovieTextBox14.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else
             {
                 survey.Name(MovieTextBox15.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
 
@@ -275,91 +281,91 @@ namespace PracticeProject
             if (cb.Name == "MovieCheckBox1")
             {
                 survey.Name(MovieTextBox1.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox2")
             {
                 survey.Name(MovieTextBox2.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox3")
             {
                 survey.Name(MovieTextBox3.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox4")
             {
                 survey.Name(MovieTextBox4.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox5")
             {
                 survey.Name(MovieTextBox5.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox6")
             {
                 survey.Name(MovieTextBox6.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox7")
             {
                 survey.Name(MovieTextBox7.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox8")
             {
                 survey.Name(MovieTextBox8.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox9")
             {
                 survey.Name(MovieTextBox9.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox10")
             {
                 survey.Name(MovieTextBox10.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox11")
             {
                 survey.Name(MovieTextBox11.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox12")
             {
                 survey.Name(MovieTextBox12.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox13")
             {
                 survey.Name(MovieTextBox13.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else if (cb.Name == "MovieCheckBox14")
             {
                 survey.Name(MovieTextBox14.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
             else
             {
                 survey.Name(MovieTextBox15.Text);
-                survey.Ranking(0);
+                survey.Ranking("1");
                 surveyResults.Add(survey);
             }
         }
@@ -382,6 +388,45 @@ namespace PracticeProject
         public List<SurveyMovies> getSurveyResults()
         {
             return this.surveyResults;
+        }
+
+
+        //This will add the user's reviews onto the csv file for the AI to use to train
+        public void addSurveyResults()
+        {
+            var dataPath = Path.Combine(Environment.CurrentDirectory, "Data", "ratings_small.csv");
+            
+            for (int i = 0; i < 15; i++)
+            {
+                string userInfo = surveyResults[i].userId + "," + surveyResults[i].getTitle() + "," + surveyResults[i].getRank();
+
+                File.AppendAllText(dataPath, userInfo);
+            }
+        }
+
+
+        //Loads the LoadScreen for Help Information
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoadScreen load = new LoadScreen();
+            load.Show();
+            this.Close();
+        }
+
+        //Loads the results of the movie list
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ResultScreen result = new ResultScreen();
+            result.Show();
+            this.Close();
+            NoResultsScreen noResults = new NoResultsScreen();
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SearchScreen search = new SearchScreen();
+            this.Close();
         }
     }
 }

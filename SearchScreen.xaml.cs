@@ -23,7 +23,7 @@ namespace PracticeProject
         string SearchTitle { get; set; }
         string SearchDirector { get; set; }
         string SearchYear { get; set; }
-        string SearchGenre { get; set; }
+        List<string> SearchGenre { get; set; }
         public List<string> GenreCollection { get; set; }
 
         int tester;
@@ -50,6 +50,7 @@ namespace PracticeProject
             SearchTitle = TBTitle.Text; 
         }
 
+
         //Get User input for Year 
         private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
@@ -59,7 +60,8 @@ namespace PracticeProject
         //Get Genre from dropdown menu
         private void Genre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SearchGenre = (string) (GenreDropDown.SelectedItem);
+            string selectedItem = (string) (GenreDropDown.SelectedItem);
+            SearchGenre.Add(selectedItem);
         }
 
         //Get User input for Director 
@@ -67,41 +69,36 @@ namespace PracticeProject
         {
             SearchDirector = TBDirector.Text;
         }
-        
+
         //
         private void Get_List_Click(object sender, RoutedEventArgs e)
         {
-            
-            //call backend function to get MovieList
-            
-            //NoResultsScreen noResults = new NoResultsScreen();
-            //noResults.Show();
 
-            //this.Close();
-            //MessageBox.Show("HELP ME!");
-            ////if it returns results, go to ResultScreen
+            Survey survey = new Survey();
+            survey.Show();
+            this.Close();
+        }
 
-            if (tester == 0)
+        public void getUserInput()
+        {
+            UserInput userInput = new UserInput();
+            if (SearchTitle != "")
             {
-                tester = 1;
-
-                ResultScreen result = new ResultScreen();
-                result.Show();
-
-                this.Close();
+                userInput.Title = SearchTitle;
             }
-            else
+            if (SearchDirector != "")
             {
-                //if it return no results, go to NoResultsScreen
-                tester = 0;
-
-                NoResultsScreen noResults = new NoResultsScreen();
-                noResults.Show();
-
-                this.Close();
-                }
+                userInput.Director = SearchDirector;
             }
-
+            if (SearchGenre != null)
+            {
+                userInput.Genre = SearchGenre;
+            }
+            if (SearchYear != "")
+            {
+                userInput.Year = SearchYear;
+            }
+        }
         //exit the application
         private void Button_Click(object sender, RoutedEventArgs e)
         {

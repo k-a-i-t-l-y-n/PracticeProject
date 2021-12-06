@@ -14,7 +14,7 @@
         <Label Content="Genre" HorizontalAlignment="Left" Margin="37,245,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18"/>
         <Label Content="Director" HorizontalAlignment="Left" Margin="30,306,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18"/>
         <TextBox x:Name="TBDirector" HorizontalAlignment="Left" Height="42" Margin="117,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" TextChanged="TextBox_TextChanged_4" FontFamily="Times New Roman" FontSize="18"/>
-        <Button x:Name="Get_List" Content="Get List" HorizontalAlignment="Left" Margin="447,348,0,0" VerticalAlignment="Top" Width="87" Height="41" Click="Get_List_Click"/>
+        <Button x:Name="Get_List" Content="Search" HorizontalAlignment="Left" Margin="447,348,0,0" VerticalAlignment="Top" Width="87" Height="41" Click="Get_List_Click"/>
         <ComboBox x:Name="GenreDropDown" ItemsSource ="{Binding GenreCollection}" HorizontalAlignment="Left" Margin="123,251,0,0" VerticalAlignment="Top" Width="227" Height="24" SelectionChanged="Genre_SelectionChanged">
             
         </ComboBox>

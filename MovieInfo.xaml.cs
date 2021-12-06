@@ -18,7 +18,7 @@ namespace PracticeProject
     /// Interaction logic for MovieInfo.xaml
     /// </summary>
     /// 
-    public class Movie {
+    public class InfoMovie {
         public string Title { set; get; }
         public string Director { set; get; }
         public string Actors { set; get; }
@@ -33,7 +33,7 @@ namespace PracticeProject
     public partial class MovieInfo : Window
     {
         ResultScreen resultScreen = new ResultScreen();
-        Movie movie = new Movie();
+        InfoMovie movie = new InfoMovie();
 
         public MovieInfo()
         {

@@ -21,23 +21,41 @@
         <ScrollViewer CanContentScroll="True" x:Name="MovieScrollViewer" HorizontalAlignment="Left" Height="531" Margin="10,29,0,0" VerticalAlignment="Top" Width="774">
 
             <Canvas Height="531" Width="774" Background="Gray">
-                <TextBox x:Name="TextBlock1" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock1_TextChanged"/>
-                <TextBox x:Name="TextBlock2" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock2_TextChanged" />
-                <TextBox x:Name="TextBlock3" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock3_TextChanged"/>
-                <TextBox x:Name="TextBlock4" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock4_TextChanged"/>
-                <TextBox x:Name="TextBlock5" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock5_TextChanged" />
-                <TextBox x:Name="TextBlock6" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock6_TextChanged"/>
-                <TextBox x:Name="TextBlock7" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock7_TextChanged"/>
-                <TextBox x:Name="TextBlock8" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock8_TextChanged"/>
-                <TextBox x:Name="TextBlock9" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock9_TextChanged"/>
-                <TextBox x:Name="TextBlock10" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock10_TextChanged"/>
-                <TextBox x:Name="TextBlock11" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock11_TextChanged"/>
-                <TextBox x:Name="TextBlock12" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock12_TextChanged"/>
-                <TextBox x:Name="TextBlock13" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock13_TextChanged"/>
-                <TextBox x:Name="TextBlock14" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock14_TextChanged"/>
-                <TextBox x:Name="TextBlock15" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" TextChanged="TextBlock15_TextChanged"/>
-                <Button x:Name="LoadNewMoviesButton" Content="Load More Movies" Canvas.Left="570" Canvas.Top="431" Width="110" Click="LoadNewMoviesButton_Click"/>
+                <TextBox x:Name="TextBlock1" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
+                <TextBox x:Name="TextBlock2" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
+                <TextBox x:Name="TextBlock3" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock4" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
+                <TextBox x:Name="TextBlock5" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock6" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock7" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock8" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock9" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
+                <TextBox x:Name="TextBlock10" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock11" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock12" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock13" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock14" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <TextBox x:Name="TextBlock15" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
+                <Button x:Name="LoadNewMoviesButton" Content="Load More Movies" Canvas.Left="570" Canvas.Top="431" Width="110"/>
                 <Button x:Name="LoadPreviousMoviesButton" Content="Load Previous Movies" Canvas.Left="79" Canvas.Top="436" Width="120" Click="LoadPreviousMoviesButton_Click"/>
+                <Button x:Name="LoadSearchScreenButton" Content="Search Again" Width="75" Canvas.Left="99" Canvas.Top="374" Click="LoadSearchScreenButton_Click"/>
+                <Button Content="X" Width="24" Canvas.Left="726" Canvas.Top="6" Height="24" RenderTransformOrigin="0.492,0.492" Click="Button_Click"/>
+                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="181" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button Content="More" Width="76" Canvas.Left="302" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="302" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="303" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="85" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="85" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="293" Click="Button_Click_1"/>
+                <Button Content="Help" Canvas.Left="302" Canvas.Top="431" Width="75"/>
 
             </Canvas>
         </ScrollViewer>
