@@ -21,6 +21,7 @@
         <Button x:Name="CloseMovieInfo" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="22" Margin="421,8,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
 
         </Button>
+        <Button Content="Help" HorizontalAlignment="Left" Margin="124,390,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

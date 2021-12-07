@@ -20,7 +20,7 @@
 
         <ScrollViewer CanContentScroll="True" x:Name="MovieScrollViewer" HorizontalAlignment="Left" Height="531" Margin="10,29,0,0" VerticalAlignment="Top" Width="774">
 
-            <Canvas Height="531" Width="774" Background="Gray">
+            <Canvas x:Name="Canvas" Height="531" Width="774" Background="Gray">
                 <TextBox x:Name="TextBlock1" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
                 <TextBox x:Name="TextBlock2" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
                 <TextBox x:Name="TextBlock3" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
@@ -40,22 +40,22 @@
                 <Button x:Name="LoadPreviousMoviesButton" Content="Load Previous Movies" Canvas.Left="79" Canvas.Top="436" Width="120" Click="LoadPreviousMoviesButton_Click"/>
                 <Button x:Name="LoadSearchScreenButton" Content="Search Again" Width="75" Canvas.Left="99" Canvas.Top="374" Click="LoadSearchScreenButton_Click"/>
                 <Button Content="X" Width="24" Canvas.Left="726" Canvas.Top="6" Height="24" RenderTransformOrigin="0.492,0.492" Click="Button_Click"/>
-                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="181" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="19" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="161" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button Content="More" Width="76" Canvas.Left="302" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="302" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="303" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="85" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="443" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="85" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button Content="More" Width="75" Canvas.Left="585" Canvas.Top="293" Click="Button_Click_1"/>
-                <Button Content="Help" Canvas.Left="302" Canvas.Top="431" Width="75"/>
+                <Button x:Name="Button1" Content="More" Width="75" Canvas.Left="19" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button x:Name="Button2" Content="More" Width="75" Canvas.Left="161" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button x:Name="Button3" Content="More" Width="75" Canvas.Left="19" Canvas.Top="181" Click="Button_Click_1"/>
+                <Button x:Name="Button4" Content="More" Width="75" Canvas.Left="19" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button x:Name="Button5" Content="More" Width="75" Canvas.Left="161" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button x:Name="Button6" Content="More" Width="75" Canvas.Left="161" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button x:Name="Button7" Content="More" Width="76" Canvas.Left="302" Canvas.Top="80" Click="Button_Click_1"/>
+                <Button x:Name="Button8" Content="More" Width="75" Canvas.Left="302" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button x:Name="Button9" Content="More" Width="75" Canvas.Left="303" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button x:Name="Button10" Content="More" Width="75" Canvas.Left="443" Canvas.Top="85" Click="Button_Click_1"/>
+                <Button x:Name="Button11" Content="More" Width="75" Canvas.Left="443" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button x:Name="Button12" Content="More" Width="75" Canvas.Left="443" Canvas.Top="288" Click="Button_Click_1"/>
+                <Button x:Name="Button13" Content="More" Width="75" Canvas.Left="585" Canvas.Top="85" Click="Button_Click_1"/>
+                <Button x:Name="Button14" Content="More" Width="75" Canvas.Left="585" Canvas.Top="185" Click="Button_Click_1"/>
+                <Button x:Name="Button15" Content="More" Width="75" Canvas.Left="585" Canvas.Top="293" Click="Button_Click_1"/>
+                <Button Content="Help" Canvas.Left="302" Canvas.Top="431" Width="75" Click="Button_Click_2"/>
 
             </Canvas>
         </ScrollViewer>

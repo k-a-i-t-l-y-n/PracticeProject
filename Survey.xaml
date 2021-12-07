@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
         Title="Survey" Height="550" Width="800">
-    <Grid Margin="0,0,-6.4,6">
+    <Grid x:Name="Grid" Margin="0,0,-6.4,6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="384*"/>
             <ColumnDefinition Width="29*"/>

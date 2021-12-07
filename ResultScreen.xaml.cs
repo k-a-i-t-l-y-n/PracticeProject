@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,10 +34,21 @@ namespace PracticeProject
         //loaded if the user clicks on a movie
 
         MovieInfo mi;
+        List<Movie> movieTitles = new List<Movie>();
 
         public ResultScreen()
         {
+            
+        }
+        public ResultScreen(MovieList movieList)
+        {
             InitializeComponent();
+            
+            //Gets movie List from backend
+            movieTitles = movieList.getMovieList();
+            
+            //Loads the titles of the movies
+            LoadMovieTitles(movieTitles);
         }
 
         private void LoadSearchScreenButton_Click(object sender, RoutedEventArgs e)
@@ -48,32 +60,209 @@ namespace PracticeProject
         }
         private void LoadMovieTitles(List<Movie> movieList)
         {
-            for (int i = 1; i < 16; i++)
+            if (movieList.Count != 0)
             {
-                string movieTextBox = "TextBlock" + i;
-                TextBox tb = new TextBox();
-                tb.Name = movieTextBox;
-                tb.Text = movieList[i].Title;
+                for (int i = 1; i < 16; i++)
+                {
+                    string movieTextBox = "TextBlock" + i;
+                    TextBox tb = Canvas.FindName(movieTextBox) as TextBox;
+                    //tb.Name = movieTextBox;
+                    //Controls.Add(tb);
+                    //Trace.WriteLine(movieList[i-1].MovieID);
+                    //MessageBox.Show(tb.Name + " " + movieList[i - 1].Title);
+                    tb.Text = movieList[i - 1].Title;
+
+                }
             }
         }
 
+        //Exits application
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //DELETE
         private void TextBlock1_TextChanged(object sender, TextChangedEventArgs e)
         {
             MessageBox.Show("HELPPP");
            
         }
 
+        //Gets more information about the chosen movie
         //Loads the Movie Info Screen 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MovieInfo mi = new MovieInfo();
-            mi.Show();
-            this.Close();
+            Button button = sender as Button;
+            Query query = new Query();
+            InfoMovie infoMovie = new InfoMovie();
+
+            if (button.Name == "Button1")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock1.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button2")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock2.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button3")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock3.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button4")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock4.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button5")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock5.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button6")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock6.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button7")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock7.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button8")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock8.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button9")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock9.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button10")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock10.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button11")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock11.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button12")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock12.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button13")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock13.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button14")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock14.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+            if (button.Name == "Button15")
+            {
+                //calls query to get movie information based on the movie title
+                infoMovie = query.getMoreMovieInfoQuery(TextBlock15.Text);
+
+                //loads new MovieInfo Screen
+                MovieInfo mi = new MovieInfo(infoMovie);
+
+                mi.Show();
+                this.Close();
+            }
+
         }
 
         private void LoadNewMoviesButton_Click(object sender, RoutedEventArgs e)
@@ -117,6 +306,13 @@ namespace PracticeProject
                 tbCounter++;
             }
             movieIndex = i;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LoadScreen load = new LoadScreen();
+            load.Show();
+            this.Close();
         }
     }
 }

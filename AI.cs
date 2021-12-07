@@ -12,7 +12,8 @@ namespace PracticeProject
 {
     class AI
     {
-        public static List<moviesForList> runAI()
+        public AI() { }
+        public List<moviesForList> runAI()
         {
             MLContext mlContext = new MLContext();
 
@@ -78,7 +79,7 @@ namespace PracticeProject
             List<moviesForList> movieList = new List<moviesForList>();
 
             //loop throught the movies and put the movies with a score above 3.0 in to the movie list
-            for(int i = 0; i < 5000; i++)
+            for(int i = 0; i < 100; i++)
             {
                 //for the large file use user id 270897
                 //for the smaller file use user id 672
@@ -88,7 +89,7 @@ namespace PracticeProject
                 RatingPrediction ratingPrediction = predictionEngine.Predict(testInput);
                
                 //if the movie score is above 3.0 add it to the movie list
-                if (Math.Round(ratingPrediction.Score, 1) > 3.0)
+                if (Math.Round(ratingPrediction.Score, 1) > 3.5)
                 {
                     //save the movieId and movieScore to the moviesForList object
                     moviesForList newMovie = new moviesForList(testInput.movieId, ratingPrediction.Score);
@@ -137,7 +138,7 @@ namespace PracticeProject
     }
 
     //class to hold the movie id's and score to send to the front end
-    class moviesForList
+    public class moviesForList
     {
         private float movieId;
         private float movieScore; 

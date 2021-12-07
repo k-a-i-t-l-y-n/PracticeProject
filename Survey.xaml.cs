@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,12 +65,19 @@ namespace PracticeProject
     {
         //List object to store the SurveyMovies objects
         List<SurveyMovies> surveyResults = new List<SurveyMovies>();
-        List<string> movies = new List<string> { "Movie1", "Movie2" , "Movie3" , "Movie4" , "Movie5" , "Movie6", "Movie7" , 
-            "Movie8" , "Movie9" , "Movie10" , "Movie11" , "Movie12" , "Movie13" , "Movie14" , "Movie15" };
+        
+        Query query = new Query();
+        SearchScreen search = new SearchScreen();
+        private string genre = "";
+        
 
-        public Survey()
+        List<string> movies = new List<string>();
+
+        public Survey(SearchScreen search)
         {
             InitializeComponent();
+            genre = search.SearchGenre;
+            movies = query.SurveyQuery(genre);
             setMovieTextBoxes(movies);
         }
 
@@ -374,11 +384,13 @@ namespace PracticeProject
         //It expects a string list of movie titles
         public void setMovieTextBoxes(List<string> movieTitles)
         {
-            for(int i = 1; i < 16; i++) {
+            for(int i = 1; i <= movieTitles.Count(); i++) {
                 string movieTextBox = "MovieTextBox" + i;
-                TextBox tb = new TextBox();
-                tb.Name = movieTextBox;
-                tb.Text = movieTitles[i];
+                TextBlock tb = Grid.FindName(movieTextBox) as TextBlock;
+                //tb.Name = movieTextBox;
+                //Controls.Add(tb);
+                tb.Text = movieTitles[i-1];
+
             }
           
 
@@ -395,10 +407,13 @@ namespace PracticeProject
         public void addSurveyResults()
         {
             var dataPath = Path.Combine(Environment.CurrentDirectory, "Data", "ratings_small.csv");
-            
-            for (int i = 0; i < 15; i++)
+            Query query = new Query();
+            int movieId = 0;
+
+            for (int i = 0; i < surveyResults.Count(); i++)
             {
-                string userInfo = surveyResults[i].userId + "," + surveyResults[i].getTitle() + "," + surveyResults[i].getRank();
+                movieId = query.getMovieId(surveyResults[i].getTitle());
+                string userInfo = surveyResults[i].userId + "," + movieId + "," + surveyResults[i].getRank() + "\n";
 
                 File.AppendAllText(dataPath, userInfo);
             }
@@ -416,11 +431,24 @@ namespace PracticeProject
         //Loads the results of the movie list
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ResultScreen result = new ResultScreen();
-            result.Show();
-            this.Close();
-            NoResultsScreen noResults = new NoResultsScreen();
+            Backend backend = new Backend();
+            MovieList movieList = new MovieList();
+            addSurveyResults();
+            movieList = backend.GetMovieList(search.getUserInput());
 
+            if (movieList.getMovieList().Count() == 0)
+            {
+                NoResultsScreen noResults = new NoResultsScreen();
+                noResults.Show();
+                this.Close();
+            }
+            else
+            {
+                ResultScreen result = new ResultScreen(movieList);
+                result.Show();
+                this.Close();
+            }
+    
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

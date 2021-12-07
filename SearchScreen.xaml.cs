@@ -23,7 +23,7 @@ namespace PracticeProject
         string SearchTitle { get; set; }
         string SearchDirector { get; set; }
         string SearchYear { get; set; }
-        List<string> SearchGenre { get; set; }
+        public string SearchGenre { get; set; }
         public List<string> GenreCollection { get; set; }
 
         int tester;
@@ -60,8 +60,8 @@ namespace PracticeProject
         //Get Genre from dropdown menu
         private void Genre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string selectedItem = (string) (GenreDropDown.SelectedItem);
-            SearchGenre.Add(selectedItem);
+            SearchGenre = ((string)GenreDropDown.SelectedItem);
+            //SearchGenre.Add(selectedItem);
         }
 
         //Get User input for Director 
@@ -74,12 +74,12 @@ namespace PracticeProject
         private void Get_List_Click(object sender, RoutedEventArgs e)
         {
 
-            Survey survey = new Survey();
+            Survey survey = new Survey(this);
             survey.Show();
             this.Close();
         }
 
-        public void getUserInput()
+        public UserInput getUserInput()
         {
             UserInput userInput = new UserInput();
             if (SearchTitle != "")
@@ -90,7 +90,7 @@ namespace PracticeProject
             {
                 userInput.Director = SearchDirector;
             }
-            if (SearchGenre != null)
+            if (SearchGenre != "")
             {
                 userInput.Genre = SearchGenre;
             }
@@ -98,6 +98,8 @@ namespace PracticeProject
             {
                 userInput.Year = SearchYear;
             }
+
+            return userInput;
         }
         //exit the application
         private void Button_Click(object sender, RoutedEventArgs e)

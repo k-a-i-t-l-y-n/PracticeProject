@@ -24,7 +24,7 @@ namespace PracticeProject
         public string Actors { set; get; }
         public string Description { set; get; }
         public string Genre { get; set; }
-        public string Year { set; get; }
+        public int Year { set; get; }
 
 
 
@@ -34,19 +34,25 @@ namespace PracticeProject
     {
         ResultScreen resultScreen = new ResultScreen();
         InfoMovie movie = new InfoMovie();
+        
 
         public MovieInfo()
         {
             InitializeComponent();
-            //call backend function to get movie information
-            movie.Title = "Title;";
-            movie.Director = "Dir;";
-            movie.Actors = "Actors;";
-            movie.Description = "Desc;";
-            movie.Genre = "Genre";
-            movie.Year = "Year;";
+        }
 
-            
+        public MovieInfo(InfoMovie infoMovie)
+        {
+            InitializeComponent();
+            //call backend function to get movie information
+            movie.Title = infoMovie.Title;
+            movie.Director = infoMovie.Director;
+            movie.Actors = infoMovie.Actors;
+            movie.Description = infoMovie.Description;
+            movie.Genre = infoMovie.Genre;
+            movie.Year = infoMovie.Year;
+
+
             LoadMovieScreenInfo(movie.Title, movie.Director, movie.Actors, movie.Description, movie.Genre, movie.Year);
         }
 
@@ -59,14 +65,21 @@ namespace PracticeProject
             this.resultScreen.Show();
         }
 
-        private void LoadMovieScreenInfo(string title, string director, string actors, string description, string genre, string year)
+        private void LoadMovieScreenInfo(string title, string director, string actors, string description, string genre, int year)
         {
             MovieDescription.Text = description;
             MovieTitle.Text = title;
             MovieActor.Text = actors;
             MovieGenre.Text = genre;
-            MovieYear.Text = year;
+            MovieYear.Text = year.ToString();
             MovieDirector.Text = director; 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LoadScreen load = new LoadScreen();
+            load.Show();
+            this.Close();
         }
     }
 }

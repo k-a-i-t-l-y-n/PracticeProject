@@ -1,9 +1,53 @@
 ﻿<Application x:Class="PracticeProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="https://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:PracticeProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="main">
+            <Setter Property="TextElement.FontFamily"
+            Value="pack://application:,,,/Fonts/#Bebas Neue" />
+        </Style>
+        
+        <Style x:Key="pakenham" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Fonts/#pakenham"/>
+        </Style>
+
+        <Style x:Key ="price" TargetType="Label">
+            <Setter Property="FontSize" Value="55"></Setter>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#023047"/>
+            <Setter Property="FontFamily" Value="Fonts/#Panic" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key ="helpBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#f1faee"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Fonts/Pakenham Rg"/>
+        </Style>
+        
+        <Style x:Key ="regBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#f1faee"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+        </Style>
+        
+        <Style x:Key ="regBlock" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#f1faee"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -1,24 +1,28 @@
 ﻿<Window x:Class="PracticeProject.LoadScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
+        Height="450" Width="815">
+    <Grid Background="#8ecae6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="101*"/>
+        </Grid.RowDefinitions>
 
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="709,19,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontFamily="Monotype Corsiva" FontSize="18" Height="34"/>
-        <Label Content="Just Another Movie" HorizontalAlignment="Left" Margin="214,19,0,0" VerticalAlignment="Top" FontFamily="Monotype Corsiva" FontSize="48"/>
-        <Button Content="Next" HorizontalAlignment="Left" Margin="709,80,0,0" VerticalAlignment="Top" Width="75" FontFamily="Monotype Corsiva" Height="42" Click="Button_Click_1" FontSize="18"/>
-        <TextBox x:Name="SurveyTB" HorizontalAlignment="Left" Height="166" Margin="37,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="SearchTB" HorizontalAlignment="Left" Height="166" Margin="572,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="ResultsTB" HorizontalAlignment="Left" Height="166" Margin="374,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="MovieInfoTB" HorizontalAlignment="Left" Height="166" Margin="200,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Survey" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.609" Margin="78,176,0,0"/>
-        <Label Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.664,0.531" Margin="241,176,0,0"/>
-        <Label Content="Results" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.609" Margin="404,176,0,0"/>
-        <Label Content="Movie Information" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.609" Margin="572,176,0,0"/>
-
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="760,10,0,0" VerticalAlignment="Top" Width="39" Click="Button_Click" FontFamily="Calibri" FontSize="18" Height="35" RenderTransformOrigin="-5.049,1.303"/>
+        <Label Background="white" Content="Just Another Movie" Style="{StaticResource price}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="723"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="760,66,0,0" VerticalAlignment="Top" Width="39" FontFamily="Calibri" Height="26" Click="Button_Click_1" FontSize="18"/>
+        <TextBox x:Name="SurveyTB" Style="{StaticResource helpBox}"  HorizontalAlignment="Left" Height="211" Margin="10,176,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="185" Grid.RowSpan="2"/>
+        <TextBox x:Name="SearchTB" Style="{StaticResource helpBox}" HorizontalAlignment="Left" Height="211" Margin="614,176,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="185" Grid.RowSpan="2"/>
+        <TextBox x:Name="ResultsTB" Style="{StaticResource helpBox}" HorizontalAlignment="Left" Height="211" Margin="417,176,0,0" TextWrapping="Wrap" Text="TextBox" Width="179" Grid.RowSpan="2"/>
+        <TextBox x:Name="MovieInfoTB" Style="{StaticResource helpBox}" HorizontalAlignment="Left" Height="211" Margin="213,176,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="186" Grid.RowSpan="2"/>
+        <Label Background="white" Foreground="#ffb703"  Padding="2" Content="Survey" Style="{StaticResource pakenham}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.609" Margin="76,115,0,0"/>
+        <Label Background="white" Foreground="#ffb703" Padding="2" Content="Search" Style="{StaticResource pakenham}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="278,115,0,0"/>
+        <Label Background="white" Foreground="#ffb703" Padding="2" Content="Results" Style="{StaticResource pakenham}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.609" Margin="478,115,0,0"/>
+        <Label Background="white" Foreground="#ffb703" Padding="2" Content="Movie Information" Style="{StaticResource pakenham}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.985,0.078" Margin="627,115,0,0"/>
     </Grid>
 </Window>
