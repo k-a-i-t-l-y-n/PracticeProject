@@ -10,7 +10,6 @@ namespace PracticeProject
 {
     public class UserInput
     {
-        public string Title { get; set; }
         public string Director { get; set; }
         public string Actor { get; set; }
         public List<string> Genre { get; set; }
@@ -18,7 +17,6 @@ namespace PracticeProject
 
         public UserInput()
         {
-            Title = "";
             Director = "";
             Actor = "";
             Genre=new List<string>();
@@ -27,7 +25,7 @@ namespace PracticeProject
         public bool noInput()
         {
             bool empty = true;
-            if ((this.Genre.Count()!=0) || (this.Title != "") || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
+            if ((this.Genre.Count()!=0) || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
                 empty = false;
             return empty;
         }
@@ -45,12 +43,12 @@ namespace PracticeProject
         public string Description { get; set; }
         public string PosterLink { get; set; }
         public float Rating { get; set; }
-        Movie(moviesForList movies) 
+       public Movie(moviesForList movie) 
         {
             string connectionString = @"Data Source=apmycs4.apsu.edu;Initial Catalog=khardin9CSCI4805;User ID=khardin9CSCI4805;Password=CSCI4805abc";
             SqlConnection connection = new SqlConnection(connectionString);
-            MovieID = (int)movies.getMovieID();
-            Rating = movies.getMovieScore();
+            MovieID = (int)movie.getMovieID();
+            Rating = movie.getMovieScore();
             SqlDataReader reader;
             SqlCommand getTitle = new SqlCommand("select distinct(title), movieId from Movies where movieId in (2, 3, 5)", connection);
             SqlCommand getDirector = new SqlCommand("select distinct(directorName), Movies.movieId, Movies.title from((Directors inner join MovieDirectors on Directors.directorId = MovieDirectors.directorId) inner join Movies on MovieDirectors.movieId = Movies.movieId) where Movies.movieId in (2, 3, 5)",connection);
@@ -64,14 +62,6 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (reader =getTitle.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        this.Title = reader.GetString(0);
-                    }
-
-                }
                 using (reader = getDirector.ExecuteReader())
                 {
                     while (reader.Read())
@@ -118,7 +108,23 @@ namespace PracticeProject
                     {
                         this.PosterLink = reader.GetString(0);
                     }
+
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
         }
     }
@@ -143,9 +149,13 @@ namespace PracticeProject
         private
        List<Movie> movieList;
 
-        MovieList()
+       public MovieList(List<moviesForList> movies)
         {
             this.movieList = new List<Movie>();
+            foreach(moviesForList movie in movies) 
+            {
+                this.addMovie(new Movie(movie));
+            }
         }
         public void addMovie(Movie movie)
         {
@@ -166,13 +176,7 @@ namespace PracticeProject
     public class Query
     {
         UserInput input;
-        string movieTable = "Movies";
-        string genreTable = "Genres";
-        string directorTable = "Directors";
-        string directorIdTable = "DirectorIds";
-        string actorTable = "Actors";
-        string actorIdTable = "ActorIds";
-        string userTable = "Users";
+
         string connectionString = @"Data Source=apmycs4.apsu.edu;Initial Catalog=khardin9CSCI4805;User ID=khardin9CSCI4805;Password=CSCI4805abc";
         bool hasResults = false;
 
@@ -180,13 +184,9 @@ namespace PracticeProject
         {
             this.input = input;
         }
-        List<moviesForList> SearchQuery(List<moviesForList> results)
+      public  List<moviesForList> SearchQuery(List<moviesForList> results)
         {
             //If there is input for title search database for titles that have the input as a substring.
-            if (input.Title != "")
-            {
-                results = this.TitleQuery();
-            }
             if (input.Director != "")
             {
                 results = this.DirectorQuery( results, hasResults);
@@ -223,35 +223,7 @@ namespace PracticeProject
             return query;
 
         }
-        List<moviesForList> TitleQuery()
-        {
-            string selectPt1 = "SELECT movieID FROM ";
-            string selectPt2 = "WHERE ";
-            string tempQueryString;
-            SqlConnection connection;
-            List<moviesForList> results =new List<moviesForList>();
-
-            SqlDataReader reader;
-            SqlCommand command;
-
-            using (connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                tempQueryString = selectPt1 + movieTable + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";
-                command = new SqlCommand(tempQueryString, connection);
-                using (reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                      //  results.Add(reader.GetInt32(0));
-                    }
-                }
-                hasResults = true;
-                connection.Close();
-
-            }
-            return results;
-        }
+       
         List<moviesForList> DirectorQuery(List<moviesForList> results, bool hasResults)
         {
 
@@ -350,8 +322,6 @@ namespace PracticeProject
         List<moviesForList> GenreQuery(List<moviesForList> results, bool hasResults)
         {
             string queryString = "SELECT MovieGenres.movieID FROM (MovieGenres inner join Genres on MovieGenres.genreId = Genres.genreId) Where Genres.genreName";
-            string genres = "";
-            
             SqlConnection connection;
             List<int> tempResults = new List<int>();
 
@@ -407,7 +377,7 @@ namespace PracticeProject
         List<moviesForList> YearQuery(List<moviesForList> results, bool hasResults)
         {
             string selectPt1 = "SELECT movieID FROM ";
-            string selectPt2 = "WHERE ";
+            string selectPt2 =;
             string tempQueryString;
             SqlConnection connection;
             List<int> tempResults = new List<int>();
@@ -417,7 +387,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                tempQueryString = selectPt1 + movieTable + " year " + selectPt2 + input.Year;
+                tempQueryString = selectPt1  + "Movies WHERE Year = " +  input.Year;
                 if (hasResults == true)
                     tempQueryString = FormMovieIDQuery(results, tempQueryString);
                 command = new SqlCommand(tempQueryString, connection);
