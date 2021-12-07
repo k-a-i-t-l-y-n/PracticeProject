@@ -5,59 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
-        Title="ResultScreen" Height="600.8" Width="800">
+        Title="ResultScreen" Height="750" Width="800">
 
-    <Grid>
+    <Grid Margin="0,0,0.4,0" Background="#023047">
         <Grid.Resources>
             <Style x:Key="MovieBorderStyle" TargetType="{x:Type Border}">
                 <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderBrush" Value="#023047"/>
                 <Setter Property="Height" Value="100"/>
                 <Setter Property="Width" Value="100"/>
             </Style>
             <Style x:Key="MovieTextBoxStyle" TargetType="{x:Type TextBox}"/>
         </Grid.Resources>
 
-        <ScrollViewer CanContentScroll="True" x:Name="MovieScrollViewer" HorizontalAlignment="Left" Height="531" Margin="10,29,0,0" VerticalAlignment="Top" Width="774">
+        <ScrollViewer CanContentScroll="True" x:Name="MovieScrollViewer" HorizontalAlignment="Left" Height="701" Margin="10,10,0,0" VerticalAlignment="Top" Width="774"/>
+        <Canvas x:Name="Canvas" Background="white" Margin="10,10,27.2,10.2">
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="120" Canvas.Left="10">
+                <TextBox x:Name="TextBlock1" Style = "{StaticResource helpBox}" Canvas.Top="20" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." />
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="270" Canvas.Left="10">
+                <TextBox x:Name="TextBlock2" Style = "{StaticResource helpBox}" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."  />
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="440" Canvas.Left="10">
+                <TextBox x:Name="TextBlock3" Style = "{StaticResource helpBox}" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." />
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="120" Canvas.Left="165">
+                <TextBox x:Name="TextBlock4" Style = "{StaticResource helpBox}" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." />
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="270" Canvas.Left="165">
+                <TextBox x:Name="TextBlock5" Style = "{StaticResource helpBox}" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." />
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="440" Canvas.Left="165">
+                <TextBox x:Name="TextBlock6" Style = "{StaticResource helpBox}" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="120" Canvas.Left="320">
+                <TextBox x:Name="TextBlock7" Canvas.Top="10" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="270" Canvas.Left="320">
+                <TextBox x:Name="TextBlock8" Canvas.Top="115" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="440" Canvas.Left="320">
+                <TextBox x:Name="TextBlock9" Canvas.Top="220" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="120" Canvas.Left="475">
+                <TextBox x:Name="TextBlock10" Canvas.Top="10" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="270" Canvas.Left="475">
+                <TextBox x:Name="TextBlock11" Canvas.Top="115" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="440" Canvas.Left="475">
+                <TextBox x:Name="TextBlock12" Canvas.Top="220" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="120" Canvas.Left="630">
+                <TextBox x:Name="TextBlock13" Canvas.Top="10" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#219ebc" BorderThickness="10" Canvas.Top="270" Canvas.Left="630">
+                <TextBox x:Name="TextBlock14" Canvas.Top="115" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
+            <Border Background="#ffb703" BorderBrush="#8ecae6" BorderThickness="10" Canvas.Top="440" Canvas.Left="630">
+                <TextBox x:Name="TextBlock15" Canvas.Top="220" Style = "{StaticResource helpBox}" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock."/>
+            </Border>
 
-            <Canvas x:Name="Canvas" Height="531" Width="774" Background="Gray">
-                <TextBox x:Name="TextBlock1" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
-                <TextBox x:Name="TextBlock2" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
-                <TextBox x:Name="TextBlock3" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="10" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock4" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
-                <TextBox x:Name="TextBlock5" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock6" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="150" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock7" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock8" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock9" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="0" Canvas.Left="290" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red" />
-                <TextBox x:Name="TextBlock10" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock11" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock12" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="430" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock13" Canvas.Top="10" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock14" Canvas.Top="115" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <TextBox x:Name="TextBlock15" Canvas.Top="220" Canvas.Right="50" Canvas.Bottom="150" Canvas.Left="570" Height="100" Width="100" TextWrapping="Wrap" Text="Hello! I am a TextBlock." Foreground="Red"/>
-                <Button x:Name="LoadNewMoviesButton" Content="Load More Movies" Canvas.Left="570" Canvas.Top="431" Width="110"/>
-                <Button x:Name="LoadPreviousMoviesButton" Content="Load Previous Movies" Canvas.Left="79" Canvas.Top="436" Width="120" Click="LoadPreviousMoviesButton_Click"/>
-                <Button x:Name="LoadSearchScreenButton" Content="Search Again" Width="75" Canvas.Left="99" Canvas.Top="374" Click="LoadSearchScreenButton_Click"/>
-                <Button Content="X" Width="24" Canvas.Left="726" Canvas.Top="6" Height="24" RenderTransformOrigin="0.492,0.492" Click="Button_Click"/>
-                <Button x:Name="Button1" Content="More" Width="75" Canvas.Left="19" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button x:Name="Button2" Content="More" Width="75" Canvas.Left="161" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button x:Name="Button3" Content="More" Width="75" Canvas.Left="19" Canvas.Top="181" Click="Button_Click_1"/>
-                <Button x:Name="Button4" Content="More" Width="75" Canvas.Left="19" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button x:Name="Button5" Content="More" Width="75" Canvas.Left="161" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button x:Name="Button6" Content="More" Width="75" Canvas.Left="161" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button x:Name="Button7" Content="More" Width="76" Canvas.Left="302" Canvas.Top="80" Click="Button_Click_1"/>
-                <Button x:Name="Button8" Content="More" Width="75" Canvas.Left="302" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button x:Name="Button9" Content="More" Width="75" Canvas.Left="303" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button x:Name="Button10" Content="More" Width="75" Canvas.Left="443" Canvas.Top="85" Click="Button_Click_1"/>
-                <Button x:Name="Button11" Content="More" Width="75" Canvas.Left="443" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button x:Name="Button12" Content="More" Width="75" Canvas.Left="443" Canvas.Top="288" Click="Button_Click_1"/>
-                <Button x:Name="Button13" Content="More" Width="75" Canvas.Left="585" Canvas.Top="85" Click="Button_Click_1"/>
-                <Button x:Name="Button14" Content="More" Width="75" Canvas.Left="585" Canvas.Top="185" Click="Button_Click_1"/>
-                <Button x:Name="Button15" Content="More" Width="75" Canvas.Left="585" Canvas.Top="293" Click="Button_Click_1"/>
-                <Button Content="Help" Canvas.Left="302" Canvas.Top="431" Width="75" Click="Button_Click_2"/>
+            <Button x:Name="LoadNewMoviesButton" FontSize ="20" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" Content="Load More Movies" Canvas.Left="394" Canvas.Top="597" Width="219" Height="32"/>
+            <Button x:Name="LoadPreviousMoviesButton" FontSize ="20" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" Content="Load Previous Movies" Canvas.Left="108" Canvas.Top="596" Width="219" Click="LoadPreviousMoviesButton_Click" Height="33"/>
+            <Button x:Name="LoadSearchScreenButton" FontSize ="20" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" Content="Search" Width="75" Canvas.Left="655" Canvas.Top="626" Click="LoadSearchScreenButton_Click"/>
+            <Button x:Name="Button1" Content="+" Width="21" Canvas.Left="108" Canvas.Top="106" Click="Button_Click_1" RenderTransformOrigin="0.362,0.875"/>
+            <Button x:Name="Button2" Content="+" Width="21"  Canvas.Left="263" Canvas.Top="106" Click="Button_Click_1"/>
+            <Button x:Name="Button3" Content="+" Width="21"  Canvas.Left="108" Canvas.Top="250" Click="Button_Click_1" RenderTransformOrigin="2.729,1.698"/>
+            <Button x:Name="Button4" Content="+" Width="21"  Canvas.Left="108" Canvas.Top="420" Click="Button_Click_1"/>
+            <Button x:Name="Button5" Content="+" Width="21"  Canvas.Left="263" Canvas.Top="250" Click="Button_Click_1"/>
+            <Button x:Name="Button6" Content="+" Width="21"  Canvas.Left="263" Canvas.Top="420" Click="Button_Click_1"/>
+            <Button x:Name="Button7" Content="+" Width="21"  Canvas.Left="418" Canvas.Top="106" Click="Button_Click_1"/>
+            <Button x:Name="Button8" Content="+" Width="21"  Canvas.Left="418" Canvas.Top="250" Click="Button_Click_1"/>
+            <Button x:Name="Button9" Content="+" Width="21"  Canvas.Left="418" Canvas.Top="420" Click="Button_Click_1" RenderTransformOrigin="0.733,0.625"/>
+            <Button x:Name="Button10" Content="+" Width="21"  Canvas.Left="573" Canvas.Top="106" Click="Button_Click_1"/>
+            <Button x:Name="Button11" Content="+" Width="21"  Canvas.Left="573" Canvas.Top="250" Click="Button_Click_1"/>
+            <Button x:Name="Button12" Content="+" Width="21" Canvas.Left="573" Canvas.Top="420" Click="Button_Click_1"/>
+            <Button x:Name="Button13" Content="+" Width="21" Canvas.Left="729" Canvas.Top="106" Click="Button_Click_1"/>
+            <Button x:Name="Button14" Content="+" Width="21"  Canvas.Left="729" Canvas.Top="250" Click="Button_Click_1"/>
+            <Button x:Name="Button15" Content="+" Width="21" Canvas.Left="729" Canvas.Top="420" Click="Button_Click_1"/>
+            <Button Content="Help" FontSize ="20" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" Canvas.Left="655" Canvas.Top="661" Width="75" Click="Button_Click_2"/>
 
-            </Canvas>
-        </ScrollViewer>
+        </Canvas>
+        <Label Content="MOVIELIST" HorizontalContentAlignment="Center" Background ="#ffb703" VerticalAlignment="Top" Height="101" FontFamily="/PracticeProject;component/Fonts/#Pricedown Bl" FontSize="72" Margin="10,10,27.2,0"/>
     </Grid>
 </Window>

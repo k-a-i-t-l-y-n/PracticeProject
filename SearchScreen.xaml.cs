@@ -106,5 +106,11 @@ namespace PracticeProject
         {
             this.Close();
         }
+
+        private void Get_List_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            LoadScreen load = new LoadScreen();
+            load.Show();
+        }
     }
 }

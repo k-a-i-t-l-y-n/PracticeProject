@@ -24,7 +24,7 @@ namespace PracticeProject
             InitializeComponent();
             LoadTextBoxes();
         }
-
+        
         private void LoadTextBoxes()
         {
             SurveyTB.Text = "Select the checkbox for each movie that you like. Then when you are finished selecting the movies. Select the Done button";
@@ -50,6 +50,9 @@ namespace PracticeProject
        
         }
 
-        
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -13,11 +13,12 @@
         <Style x:Key="pakenham" TargetType="Label">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#fb8500"/>
             <Setter Property="FontFamily" Value="Fonts/#pakenham"/>
         </Style>
 
         <Style x:Key ="price" TargetType="Label">
-            <Setter Property="FontSize" Value="55"></Setter>
+            <Setter Property="FontSize" Value="65"></Setter>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="FontFamily" Value="Fonts/#Panic" />
@@ -42,12 +43,12 @@
             <Setter Property="FontFamily" Value="Calibri"/>
         </Style>
         
-        <Style x:Key ="regBlock" TargetType="TextBox">
+        <Style x:Key ="regBlock" TargetType="TextBlock">
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="FontWeight" Value="Light"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="#f1faee"/>
-            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontFamily" Value="Fonts/Pakenham Rg"/>
         </Style>
     </Application.Resources>
 </Application>

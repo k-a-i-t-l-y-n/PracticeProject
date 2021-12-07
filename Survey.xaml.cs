@@ -425,7 +425,7 @@ namespace PracticeProject
         {
             LoadScreen load = new LoadScreen();
             load.Show();
-            this.Close();
+            //this.Close();
         }
 
         //Loads the results of the movie list

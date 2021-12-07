@@ -5,23 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticeProject"
         mc:Ignorable="d"
-        Title="Movie Information" Height="450" Width="450.088">
-    <Grid Margin="0,0,-7,0" Height="417" VerticalAlignment="Top">
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="357" Stroke="Black" VerticalAlignment="Top" Width="376" Margin="23,10,0,0"/>
-        <TextBlock x:Name="MovieDescription" HorizontalAlignment="Left" Margin="203,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="172" Width="196"><Run Text="Description"/></TextBlock>
-        <Label Content="Director" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,163,0,0"/>
-        <Label Content="Actors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,212,0,0"/>
-        <Label Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,276,0,0"/>
-        <Label Content="Release Year" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,314,0,0"/>
-        <TextBox x:Name="MovieTitle" HorizontalAlignment="Left" Height="110" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="350" Margin="36,27,0,0"/>
-        <TextBox x:Name="MovieDirector" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="49,189,0,0"/>
-        <TextBox x:Name="MovieActor" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="49,238,0,0" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="MovieGenre" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="84" Margin="96,280,0,0"/>
-        <TextBox x:Name="MovieYear" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49" Margin="129,318,0,0"/>
-        <Button x:Name="CloseMovieInfo" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="22" Margin="421,8,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+        Height="680" Width="450.088">
+    <Grid Margin="0,0,-7,0" Height="620" VerticalAlignment="Top">
+        <Label Content="Movie Information" HorizontalContentAlignment="Center" Background ="#ffb703" VerticalAlignment="Top" Height="97" FontFamily="/PracticeProject;component/Fonts/#Pricedown Bl" FontSize="48" Margin="0,0,10,0"/>
+        <Rectangle Fill="#219ebc" HorizontalAlignment="Left" Height="480" Stroke="Black" VerticalAlignment="Top" Width="400" Margin="25,110,0,0"/>
+        <TextBlock x:Name="MovieDescription" Background="#f1faee" HorizontalAlignment="Left" Margin="230,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="315" Width="173"><Run Text="Description"/></TextBlock>
+        <Label Content="Director" Style="{StaticResource pakenham}" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,255,0,0" RenderTransformOrigin="0.178,0.305"/>
+        <Label Content="Actors" Style="{StaticResource pakenham}" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,309,0,0"/>
+        <Label Content="Genre" Style="{StaticResource pakenham}" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,381,0,0"/>
+        <Label Content="Release Year" Style="{StaticResource pakenham}" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,450,0,0"/>
+        <TextBox x:Name="MovieTitle" Background="#f1faee" HorizontalAlignment="Left" Height="110" TextWrapping="Wrap" HorizontalContentAlignment="Center" Text="TextBox" VerticalAlignment="Top" Width="350" Margin="53,131,0,0" FontFamily="/PracticeProject;component/Fonts/#Pakenham Rg" FontSize="48"/>
+        <TextBox x:Name="MovieDirector" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="162" Margin="53,281,0,0"/>
+        <TextBox x:Name="MovieActor" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="162" Margin="53,335,0,0" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="MovieGenre" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="115" Margin="53,413,0,0"/>
+        <TextBox x:Name="MovieYear" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82" Margin="53,482,0,0"/>
+        <Button Content="Help" FontSize ="14" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" HorizontalAlignment="Left" Margin="170,601,0,-6" VerticalAlignment="Top" Width="117" Click="Button_Click_1" Height="25"/>
+        <Button Content="Close" FontSize ="14" FontFamily="/PracticeProject;component/Fonts/#Gobold Bold" HorizontalAlignment="Left" Margin="53,548,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click" Height="30"/>
 
-        </Button>
-        <Button Content="Help" HorizontalAlignment="Left" Margin="124,390,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
 
     </Grid>
 </Window>

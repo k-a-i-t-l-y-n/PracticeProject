@@ -62,15 +62,18 @@ namespace PracticeProject
         {
             if (movieList.Count != 0)
             {
-                for (int i = 1; i < 16; i++)
+                for (int i = 1; i < movieList.Count; i++)
                 {
-                    string movieTextBox = "TextBlock" + i;
-                    TextBox tb = Canvas.FindName(movieTextBox) as TextBox;
-                    //tb.Name = movieTextBox;
-                    //Controls.Add(tb);
-                    //Trace.WriteLine(movieList[i-1].MovieID);
-                    //MessageBox.Show(tb.Name + " " + movieList[i - 1].Title);
-                    tb.Text = movieList[i - 1].Title;
+                    if (i < 16)
+                    {
+                        string movieTextBox = "TextBlock" + i;
+                        TextBox tb = Canvas.FindName(movieTextBox) as TextBox;
+                        //tb.Name = movieTextBox;
+                        //Controls.Add(tb);
+                        //Trace.WriteLine(movieList[i-1].MovieID);
+                        //MessageBox.Show(tb.Name + " " + movieList[i - 1].Title);
+                        tb.Text = movieList[i - 1].Title;
+                    }
 
                 }
             }
@@ -103,10 +106,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock1.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button2")
             {
@@ -114,10 +117,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock2.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+                //this.Close();
             }
             if (button.Name == "Button3")
             {
@@ -125,10 +128,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock3.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+                //this.Close();
             }
             if (button.Name == "Button4")
             {
@@ -136,10 +139,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock4.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+             //   this.Close();
             }
             if (button.Name == "Button5")
             {
@@ -147,10 +150,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock5.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button6")
             {
@@ -158,10 +161,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock6.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button7")
             {
@@ -169,10 +172,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock7.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button8")
             {
@@ -180,10 +183,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock8.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button9")
             {
@@ -191,10 +194,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock9.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+              //  this.Close();
             }
             if (button.Name == "Button10")
             {
@@ -202,10 +205,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock10.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button11")
             {
@@ -213,10 +216,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock11.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button12")
             {
@@ -224,10 +227,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock12.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button13")
             {
@@ -235,10 +238,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock13.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button14")
             {
@@ -246,10 +249,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock14.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+               // this.Close();
             }
             if (button.Name == "Button15")
             {
@@ -257,10 +260,10 @@ namespace PracticeProject
                 infoMovie = query.getMoreMovieInfoQuery(TextBlock15.Text);
 
                 //loads new MovieInfo Screen
-                MovieInfo mi = new MovieInfo(infoMovie);
+                MovieInfo mi = new MovieInfo(infoMovie, this);
 
                 mi.Show();
-                this.Close();
+                //this.Close();
             }
 
         }
@@ -312,7 +315,7 @@ namespace PracticeProject
         {
             LoadScreen load = new LoadScreen();
             load.Show();
-            this.Close();
+            //this.Close();
         }
     }
 }

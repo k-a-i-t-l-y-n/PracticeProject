@@ -41,9 +41,10 @@ namespace PracticeProject
             InitializeComponent();
         }
 
-        public MovieInfo(InfoMovie infoMovie)
+        public MovieInfo(InfoMovie infoMovie, ResultScreen result)
         {
             InitializeComponent();
+            resultScreen = result;
             //call backend function to get movie information
             movie.Title = infoMovie.Title;
             movie.Director = infoMovie.Director;
@@ -61,8 +62,9 @@ namespace PracticeProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //this.resultScreen.Show();
             this.Close();
-            this.resultScreen.Show();
+            
         }
 
         private void LoadMovieScreenInfo(string title, string director, string actors, string description, string genre, int year)
@@ -79,7 +81,7 @@ namespace PracticeProject
         {
             LoadScreen load = new LoadScreen();
             load.Show();
-            this.Close();
+            //this.Close();
         }
     }
 }

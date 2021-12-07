@@ -19,16 +19,16 @@ namespace PracticeProject
 
         public UserInput()
         {
-            Title = null;
-            Director = null;
-            Actor = null;
-            Genre = null;
-            Year = null;
+            Title = "";
+            Director = "";
+            Actor = "";
+            Genre = "";
+            Year = "";
         }
         public bool noInput()
         {
             bool empty = true;
-            if ((this.Genre != null) || (this.Title != null) || (this.Director != null) || (this.Actor != null) || (this.Year != null))
+            if ((this.Genre != "") || (this.Title != "") || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
                 empty = false;
             return empty;
         }
@@ -217,7 +217,7 @@ namespace PracticeProject
             {
                 results = this.DirectorQuery(results, hasResults);
             }
-            if (input.Actor != null)
+            if (input.Actor != "")
             {
                 results = this.ActorQuery(results, hasResults);
             }
@@ -291,9 +291,9 @@ namespace PracticeProject
             InfoMovie infoMovie = new InfoMovie();
             
             
-            string getDirector = "select directorName from ((Directors inner join MovieDirectors on Directors.directorId = MovieDirectors.directorId) inner join Movies on MovieDirectors.movieId = Movies.movieId) where Movies.title = " + "'" + title + "'"; 
-            string getYear = "select year from Movies where title = " + "'" + title + "'"; ;
-            string getActors = "select actorName from ((Actors inner join MovieActors on Actors.actorId = MovieActors.actorId) inner join Movies on MovieActors.movieId = Movies.movieId) where Movies.title = " + "'" + title + "'"; ;
+            string getDirector = "select directorName from ((Directors inner join MovieDirectors on Directors.directorId = MovieDirectors.directorId) inner join Movies on MovieDirectors.movieId = Movies.movieId) where Movies.title = \'" + title + "\'"; 
+            string getYear = "select year from Movies where title = " + "'" + title + "'"; 
+            string getActors = "select actorName from ((Actors inner join MovieActors on Actors.actorId = MovieActors.actorId) inner join Movies on MovieActors.movieId = Movies.movieId) where Movies.title = " + "'" + title + "'"; 
             string getDescription = "select description from Movies where title = " + "'" + title +"'"; 
             
             
@@ -364,7 +364,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                tempQueryString = selectPt1 + movieTable + " " + selectPt2 + "title LIKE '%" + input.Title + "%';";
+                tempQueryString = selectPt1 + movieTable + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";
                 command = new SqlCommand(tempQueryString, connection);
                 using (reader = command.ExecuteReader())
                 {
@@ -464,10 +464,10 @@ namespace PracticeProject
         }
         List<moviesForList> ActorQuery(List<moviesForList> results, bool hasResults)
         {
-            string queryString = "SELECT MovieDirectors.movieID FROM(MovieActors inner join Actors on MovieActors.ActorId = Actors.actorId) Where Actors.actorName = " + "'" + input.Actor + "'";
+            string queryString = "SELECT MovieActors.movieID FROM(MovieActors inner join Actors on MovieActors.ActorId = Actors.actorId) Where Actors.actorName = " + "'" + input.Actor + "'";
 
             SqlConnection connection;
-            List<int> tempResults = new List<int>();
+            List<string> tempResults = new List<string> ();
 
             SqlDataReader reader;
             SqlCommand command;
@@ -487,26 +487,27 @@ namespace PracticeProject
                         hasResults = true;
                         while (reader.Read())
                         {
-                            tempResults.Add(reader.GetInt32(0));
+                            tempResults.Add( reader.GetString(0));
                         }
                     }
                 }
                 hasResults = true;
                 connection.Close();
             }
+            
             List<moviesForList> newResults = new List<moviesForList>();
-            foreach (moviesForList movie in results)
-            {
-                foreach (int result in tempResults)
-                {
+            //foreach (moviesForList movie in results)
+            //{
+            //    foreach (string result in tempResults)
+            //    {
 
 
-                    if (((int)movie.getMovieID()) == result)
-                    {
-                        newResults.Add(movie);
-                    }
-                }
-            }
+            //        if (((int)movie.getMovieID()) == result)
+            //        {
+            //            newResults.Add(movie);
+            //        }
+            //    }
+            //}
 
             return newResults;
         }
