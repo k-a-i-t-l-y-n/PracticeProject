@@ -46,13 +46,14 @@ namespace PracticeProject
         public string Description { get; set; }
         public string PosterLink { get; set; }
         public float Rating { get; set; }
-
+        //Constructor for survey movies.
         public Movie(string title, float rating, int movieId )
         {
             Title = title;
             Rating = rating;
             MovieID = movieId;
         }
+       
         public Movie(moviesForList movies)
         {
             string connectionString = @"Data Source=apmycs4.apsu.edu;Initial Catalog=khardin9CSCI4805;User ID=khardin9CSCI4805;Password=CSCI4805abc";
@@ -133,22 +134,19 @@ namespace PracticeProject
     }
 
 
-    public class ErrorHandling
-    {
-        bool inputValid;
-        bool listEmpty;
-
-
-        public bool emptyList(List<Movie> movieList)
-        {
-            return (movieList.Count == 0);
-        }
-        public bool invalidInput(UserInput input)
-        {
-            return false;
-        }
-
-    }
+  //  public class ErrorHandling
+  //  {
+  //      bool inputValid;
+  //      bool listEmpty;
+  //      public bool emptyList(List<Movie> movieList)
+  //     {
+  //          return (movieList.Count == 0);
+  //      }
+  //      public bool invalidInput(UserInput input)
+  //      {
+  //          return false;
+  //     }
+  //  }
 
 
     public class MovieList
@@ -169,18 +167,17 @@ namespace PracticeProject
         {
             movieList.Add(movie);
         }
-        public bool removeMovie(int movieID)
-        {
-            return movieList.Remove(getMovie(movieID));
-        }
-        public Movie getMovie(int movieId)
-        {
-
-            return movieList.Find(delegate (Movie movie)
-            {
-                return movie.MovieID.Equals(movieId);
-            });
-        }
+     //    public bool removeMovie(int movieID)
+     //    {
+     //        return movieList.Remove(getMovie(movieID));
+     //    }
+     //   public Movie getMovie(int movieId)
+     //   {
+     //       return movieList.Find(delegate (Movie movie)
+     //       {
+     //           return movie.MovieID.Equals(movieId);
+     //       });
+     //   }
         public List<Movie> getMovieList()
         { return movieList; }
     }
@@ -188,13 +185,13 @@ namespace PracticeProject
     public class Query
     {
         UserInput input;
-        string movieTable = "Movies";
-        string genreTable = "Genres";
-        string directorTable = "Directors";
-        string directorIdTable = "DirectorIds";
-        string actorTable = "Actors";
-        string actorIdTable = "ActorIds";
-        string userTable = "Users";
+      //  string movieTable = "Movies";
+      //  string genreTable = "Genres";
+      //  string directorTable = "Directors";
+      //  string directorIdTable = "DirectorIds";
+      //  string actorTable = "Actors";
+      //  string actorIdTable = "ActorIds";
+      //  string userTable = "Users";
         string connectionString = @"Data Source=apmycs4.apsu.edu;Initial Catalog=khardin9CSCI4805;User ID=khardin9CSCI4805;Password=CSCI4805abc";
         bool hasResults = false;
 
@@ -364,7 +361,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                tempQueryString = selectPt1 + movieTable + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";
+                tempQueryString = selectPt1 + "Movies" + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";'
                 command = new SqlCommand(tempQueryString, connection);
                 using (reader = command.ExecuteReader())
                 {
@@ -584,7 +581,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                tempQueryString = selectPt1 + movieTable + " year " + selectPt2 + "'" + input.Year + "'";
+                tempQueryString = selectPt1 + "M" + " year " + selectPt2 + "'" + input.Year + "'";
                 if (hasResults == true)
                     tempQueryString = FormMovieIDQuery(results, tempQueryString);
                 command = new SqlCommand(tempQueryString, connection);
@@ -616,73 +613,64 @@ namespace PracticeProject
 
         }
 
-        int GetActorId()
-        {
-            int actorId = -1;
-            string tempQueryString = "SELECT actorId FROM Actors WHERE actorName = " + "'" + input.Actor + "'";
-            SqlConnection connection;
-            SqlDataReader reader;
-            SqlCommand command;
+    //     int GetActorId()
+    //     {
+    //         int actorId = -1;
+    //         string tempQueryString = "SELECT actorId FROM Actors WHERE actorName = " + "'" + input.Actor + "'";
+    //         SqlConnection connection;
+    //        SqlDataReader reader;
+    //         SqlCommand command;
+    //         using (connection = new SqlConnection(connectionString))
+    //         {
+    //             connection.Open();
+    //             command = new SqlCommand((tempQueryString), connection);
+    //             using (reader = command.ExecuteReader())
+    //             {
+    //                 while (reader.Read())
+    //                 {
+    //                     actorId = reader.GetInt32(0);
+    //                 }
+    // 
+    //             }
+    //            connection.Close();
+    //         }
+    //        return actorId;
+    //    }
 
-
-
-            using (connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                command = new SqlCommand((tempQueryString), connection);
-                using (reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        actorId = reader.GetInt32(0);
-                    }
-
-                }
-                connection.Close();
-            }
-            return actorId;
-        }
-
-        string GetGenreIds()
-
-        {
-
-            int count = input.Genre.Count();
-            int tempResults = 0;
-            string genreIds = "";
-            for (int i = input.Genre.Count() - 1; i >= 0; i--)
-            {
-                string tempQueryString = "SELECT genreId FROM Genres WHERE genreName = ";
-                SqlConnection connection;
-                SqlDataReader reader;
-                SqlCommand command;
-
-
-
-                using (connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    command = new SqlCommand((tempQueryString + "'" + input.Genre[i] + "'"), connection);
-                    using (reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            tempResults = reader.GetInt32(0);
-                        }
-
-                    }
-                    connection.Close();
-                }
-                genreIds += tempResults.ToString();
-
-                if (i >= 1)
-                {
-                    genreIds += ", ";
-                }
-            }
-            return genreIds;
-        }
-    }
+    //    string GetGenreIds()
+    //  {
+    //
+    //        int count = input.Genre.Count();
+    //        int tempResults = 0;
+    //        string genreIds = "";
+    //        for (int i = input.Genre.Count() - 1; i >= 0; i--)
+    //        {
+    //            string tempQueryString = "SELECT genreId FROM Genres WHERE genreName = ";
+    //            SqlConnection connection;
+    //            SqlDataReader reader;
+    //            SqlCommand command;
+    //            using (connection = new SqlConnection(connectionString))
+    //            {
+    //                connection.Open();
+    //                command = new SqlCommand((tempQueryString + "'" + input.Genre[i] + "'"), connection);
+    //                using (reader = command.ExecuteReader())
+    //                {
+    //                    while (reader.Read())
+    //                    {
+    //                        tempResults = reader.GetInt32(0);
+    //                    }
+    //            }
+    //                connection.Close();
+    //            }
+    //            genreIds += tempResults.ToString();
+    //            if (i >= 1)
+    //            {
+    //                genreIds += ", ";
+    //            }
+    //        }
+    //        return genreIds;
+    //    }
+    //}
     //class to hold the movie id's and score to send to the front end
     //public class moviesForList
     //{
