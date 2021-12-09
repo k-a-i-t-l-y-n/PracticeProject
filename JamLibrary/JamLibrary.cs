@@ -22,12 +22,12 @@ namespace PracticeProject
             Genre=new List<string>();
             Year = "";
         }
-        public bool noInput()
-        {
-            bool empty = true;
-            if ((this.Genre.Count()!=0) || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
-                empty = false;
-            return empty;
+        //public bool noInput()
+        //{
+        //    bool empty = true;
+        //    if ((this.Genre.Count()!=0) || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
+        //        empty = false;
+        //    return empty;
         }
     }
 
