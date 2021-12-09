@@ -25,13 +25,13 @@ namespace PracticeProject
             Genre = "";
             Year = "";
         }
-        public bool noInput()
-        {
-            bool empty = true;
-            if ((this.Genre != "") || (this.Title != "") || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
-                empty = false;
-            return empty;
-        }
+    //    public bool noInput()
+    //    {
+    //        bool empty = true;
+    //        if ((this.Genre != "") || (this.Title != "") || (this.Director != "") || (this.Actor != "") || (this.Year != ""))
+    //            empty = false;
+    //        return empty;
+    //    }
     }
 
     public class Movie
