@@ -19,11 +19,11 @@ namespace PracticeProject
 
         public UserInput()
         {
-            Title = "";
-            Director = "";
-            Actor = "";
-            Genre = "";
-            Year = "";
+            Title = null;
+            Director = null;
+            Actor = null;
+            Genre = null;
+            Year = null;
         }
     //    public bool noInput()
     //    {
@@ -185,13 +185,13 @@ namespace PracticeProject
     public class Query
     {
         UserInput input;
-      //  string movieTable = "Movies";
-      //  string genreTable = "Genres";
-      //  string directorTable = "Directors";
-      //  string directorIdTable = "DirectorIds";
-      //  string actorTable = "Actors";
-      //  string actorIdTable = "ActorIds";
-      //  string userTable = "Users";
+        //  string movieTable = "Movies";
+        //  string genreTable = "Genres";
+        //  string directorTable = "Directors";
+        //  string directorIdTable = "DirectorIds";
+        //  string actorTable = "Actors";
+        //  string actorIdTable = "ActorIds";
+        //  string userTable = "Users";
         string connectionString = @"Data Source=apmycs4.apsu.edu;Initial Catalog=khardin9CSCI4805;User ID=khardin9CSCI4805;Password=CSCI4805abc";
         bool hasResults = false;
 
@@ -275,9 +275,9 @@ namespace PracticeProject
 
 
                 }
-                
+
             }
-            
+
             connection.Close();
             return movieId;
         }
@@ -286,16 +286,16 @@ namespace PracticeProject
         public InfoMovie getMoreMovieInfoQuery(string title)
         {
             InfoMovie infoMovie = new InfoMovie();
-            
-            
-            string getDirector = "select directorName from ((Directors inner join MovieDirectors on Directors.directorId = MovieDirectors.directorId) inner join Movies on MovieDirectors.movieId = Movies.movieId) where Movies.title = \'" + title + "\'"; 
-            string getYear = "select year from Movies where title = " + "'" + title + "'"; 
-            string getActors = "select actorName from ((Actors inner join MovieActors on Actors.actorId = MovieActors.actorId) inner join Movies on MovieActors.movieId = Movies.movieId) where Movies.title = " + "'" + title + "'"; 
-            string getDescription = "select description from Movies where title = " + "'" + title +"'"; 
-            
-            
+
+
+            string getDirector = "select directorName from ((Directors inner join MovieDirectors on Directors.directorId = MovieDirectors.directorId) inner join Movies on MovieDirectors.movieId = Movies.movieId) where Movies.title = \'" + title + "\'";
+            string getYear = "select year from Movies where title = " + "'" + title + "'";
+            string getActors = "select actorName from ((Actors inner join MovieActors on Actors.actorId = MovieActors.actorId) inner join Movies on MovieActors.movieId = Movies.movieId) where Movies.title = " + "'" + title + "'";
+            string getDescription = "select description from Movies where title = " + "'" + title + "'";
+
+
             SqlConnection connection;
-            
+
             List<moviesForList> results = new List<moviesForList>();
 
             SqlDataReader reader;
@@ -304,7 +304,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-               
+
                 command = new SqlCommand(getDirector, connection);
                 using (reader = command.ExecuteReader())
                 {
@@ -343,8 +343,8 @@ namespace PracticeProject
                 connection.Close();
 
             }
-            
-            
+
+
             return infoMovie;
         }
         List<moviesForList> TitleQuery()
@@ -361,7 +361,7 @@ namespace PracticeProject
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                tempQueryString = selectPt1 + "Movies" + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";'
+                tempQueryString = selectPt1 + "Movies" + " " + selectPt2 + "title LIKE '%" + input.Title + "%'";
                 command = new SqlCommand(tempQueryString, connection);
                 using (reader = command.ExecuteReader())
                 {
@@ -382,7 +382,7 @@ namespace PracticeProject
         public List<string> SurveyQuery(string genreName)
         {
 
-            string surveyQuery = "select(Movies.title) from((Movies inner join MovieGenres on Movies.movieId = MovieGenres.movieId) inner join Genres on MovieGenres.genreId = Genres.genreId) where Genres.genreName =" + "'" + genreName + "'" + " order by rand(Movies.movieId);" ;
+            string surveyQuery = "select(Movies.title) from((Movies inner join MovieGenres on Movies.movieId = MovieGenres.movieId) inner join Genres on MovieGenres.genreId = Genres.genreId) where Genres.genreName =" + "'" + genreName + "'" + " order by rand(Movies.movieId);";
             Console.WriteLine(surveyQuery);
             SqlConnection connection;
             List<string> movieTitles = new List<string>();
@@ -403,7 +403,7 @@ namespace PracticeProject
                         //MessageBox.Show(reader.GetString(0));
                         movieTitles.Add(reader.GetString(0));
                         count++;
-       
+
                     }
                 }
                 connection.Close();
@@ -414,7 +414,7 @@ namespace PracticeProject
         List<moviesForList> DirectorQuery(List<moviesForList> results, bool hasResults)
         {
 
-            string queryString = "SELECT MovieDirectors.movieID FROM (MovieDirectors inner join Directors on MovieDirectors.directorId = Directors.directorId) Where Directors.directorName = "+"'" + input.Director + "'";
+            string queryString = "SELECT MovieDirectors.movieID FROM (MovieDirectors inner join Directors on MovieDirectors.directorId = Directors.directorId) Where Directors.directorName = " + "'" + input.Director + "'";
             SqlConnection connection;
             List<int> tempResults = new List<int>();
 
@@ -464,14 +464,14 @@ namespace PracticeProject
             string queryString = "SELECT MovieActors.movieID FROM(MovieActors inner join Actors on MovieActors.ActorId = Actors.actorId) Where Actors.actorName = " + "'" + input.Actor + "'";
 
             SqlConnection connection;
-            List<string> tempResults = new List<string> ();
+            List<string> tempResults = new List<string>();
 
             SqlDataReader reader;
             SqlCommand command;
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                queryString += GetActorId();
+                //        queryString += GetActorId();
                 if (hasResults == true)
                     queryString = FormMovieIDQuery(results, queryString);
                 command = new SqlCommand(queryString, connection);
@@ -484,14 +484,14 @@ namespace PracticeProject
                         hasResults = true;
                         while (reader.Read())
                         {
-                            tempResults.Add( reader.GetString(0));
+                            tempResults.Add(reader.GetString(0));
                         }
                     }
                 }
                 hasResults = true;
                 connection.Close();
             }
-            
+
             List<moviesForList> newResults = new List<moviesForList>();
             //foreach (moviesForList movie in results)
             //{
@@ -612,6 +612,7 @@ namespace PracticeProject
             return newResults;
 
         }
+    }
 
     //     int GetActorId()
     //     {
