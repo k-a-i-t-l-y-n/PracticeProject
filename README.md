@@ -1,0 +1,2 @@
+# PracticeProject
+Just Another Movie is a movie recommendation desktop application. Our purpose for creating this application is to improve the movie watching experience by eliminating the strife of finding a movie. In our application, users will be able to generate a list of recommended movies from our vast collections of movies. The problem that Just Another Movie solves is trying to make choosing what movie to watch an easier process, while also showing the user movies that they haven’t seen before. 
